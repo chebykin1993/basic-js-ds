@@ -45,7 +45,25 @@ class BinarySearchTree {
   }
 
   find(data) {
-  
+    if (this.data === data) {return this}
+
+        if (this.right != null) {
+            if (this.right.data === data) {
+        return this.right
+    } else {
+                this.right.find(data)
+        }
+    }
+
+
+        if (this.left != null) {
+            if (this.left.data === data) {
+                return this.left
+            } else {
+                this.left.find(data)
+            }
+        }
+    return null
   }
 
   remove(/* data */) {
